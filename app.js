@@ -8,16 +8,37 @@ const searchBackBtn = document.querySelector(".search-back-btn");
 
 $('.navTrigger').click(function () {
     $(this).toggleClass('active');
+    $('.nav').toggleClass('header-dark');
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
-    $('#mainListDiv').toggleClass('.header_dark')
 });
 
 $('.switch').click(function () {
     $('body').toggleClass("lightmode");
     $('body').toggleClass("darkmode");
-
 })
+
+$(window).scroll(function () {
+    affix()
+});
+
+function affix() {
+    if ($(document).scrollTop() > 50) {
+        $('.nav').addClass('affix');
+
+    } else {
+        $('.nav').removeClass('affix');
+    }
+}
+
+
+$('h2').click(function () {
+    $(this).next('section').slideToggle();
+});
+
+$('.search-result-title').click(function () {
+    $(this).next('section').slideToggle();
+});
 
 
 
@@ -70,12 +91,23 @@ async function builtSearchGallery() {
         sectionSearch.appendChild(div);
 
         searchBackBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 512 512"><path d="M459.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29l0-320c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4L288 214.3l0 41.7 0 41.7L459.5 440.6zM256 352l0-96 0-128 0-32c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160C4.2 237.5 0 246.5 0 256s4.2 18.5 11.5 24.6l192 160c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29l0-64z"/></svg>'
-        searchBackBtn.addEventListener("click", async function () {
+
+        function backtoHome() {
             popularGallery.style = "display:block";
             upcomingGallery.style = "display:block";
             searchGallery.style = "display:none";
             div.remove();
+        }
+
+        searchBackBtn.addEventListener("click", async function () {
+            backtoHome()
         });
+
+        //Home Btn
+        const HomeBtn = document.querySelector('.home-btn')
+        HomeBtn.addEventListener('click', function () {
+            backtoHome()
+        })
     });
 }
 
@@ -223,6 +255,11 @@ async function builtGallery() {
     });
 }
 builtGallery();
+
+
+
+
+
 
 
 

@@ -17,16 +17,38 @@
     <header class="nav">
         <div class="container">
             <div class="logo">
-                <a href="#">
+                <a href="#home">
                     <img src="./asset/icon.png" alt="">
                 </a>
-                <h1>FilmBufff</h1>
+                <a href="#home">
+                    <h1>FilmBufff</h1>
+                </a>
             </div>
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks">
-                    <li><a href="#home">Home</a></li>
+                    <li>
+                        <div>
+                            <input class="switch-toggle" type="checkbox" id="mode">
+                            <label class="switch" for="mode">
+                                <i class="far fa-sun" id="sun">
+                            <svg class='icon icon_sun' viewBox="0 0 40 40">
+                                <circle cx="20" cy="20" r="8" />
+                                <path
+                                    d="M21.5 3.5a1.5 1.5 0 1 0-3 0v5a1.5 1.5 0 0 0 3 0v-5ZM21.5 31.5a1.5 1.5 0 1 0-3 0v5a1.5 1.5 0 0 0 3 0v-5ZM36.5 21.5a1.5 1.5 0 1 0 0-3h-5a1.5 1.5 0 0 0 0 3h5ZM8.4 21.5a1.5 1.5 0 1 0 0-3h-5a1.5 1.5 0 0 0 0 3h5ZM32.7 9.4a1.5 1.5 0 1 0-2.1-2.1L27 10.8a1.5 1.5 0 0 0 2.2 2.1l3.5-3.5ZM12.9 29.2a1.5 1.5 0 1 0-2.1-2.1l-3.6 3.5a1.5 1.5 0 0 0 2.1 2.1l3.6-3.5ZM30.6 32.7a1.5 1.5 0 0 0 2-2.1l-3.4-3.5a1.5 1.5 0 0 0-2.2 2l3.6 3.6ZM10.8 13a1.5 1.5 0 1 0 2-2.2L9.4 7.3a1.5 1.5 0 0 0-2 2l3.5 3.6Z" />
+                            </svg>
+                                </i>
+                                <i class="far fa-moon" id="moon">                            <svg class='icon icon_moon' viewBox="0 0 40 40">
+                                    <path d="M19 2a18 18 0 0 0 13 31A18 18 0 0 1 2 20 18 18 0 0 1 19 2Z" />
+                                    <path
+                                        d="m27 3 1 4h5l-4 3 2 4-4-3-3 3 1-4-4-3h5l1-4ZM31 17l1 4h5l-4 3 1 4-3-3-4 3 2-4-4-3h5l1-4Z" />
+                                </svg>
+                                </i>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="home-btn"><a href="#popular">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <label class="search-box">
+                    <li> <label class="search-box">
                             <input class='search-input' type="text" placeholder="Search Movie" required>
                             <button class='search-btn'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29"
@@ -68,20 +90,17 @@
                                 </svg>
                             </button>
                         </label>
+                    </li>
+
                 </ul>
             </div>
             <span class="navTrigger">
-                <i></i>
-                <i></i>
-                <i></i>
+                <div>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
             </span>
-            <div class="switch-toggle">
-                <input type="checkbox" id="mode">
-                <label class="switch" for="mode">
-                    <i class="far fa-sun" id="sun"></i>
-                    <i class="far fa-moon" id="moon"></i>
-                </label>
-            </div>
         </div>
         </nav>
     </header>
@@ -103,16 +122,22 @@
             <div class="photoColleWrap" id="search">
                 <div class="search-result-title">
                     <h2>Search</h2>
-                    <button class="search-back-btn"> <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" viewBox="0 0 512 512"><path d="M459.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29l0-320c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4L288 214.3l0 41.7 0 41.7L459.5 440.6zM256 352l0-96 0-128 0-32c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160C4.2 237.5 0 246.5 0 256s4.2 18.5 11.5 24.6l192 160c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29l0-64z"/></svg>
-                    Back
-                </button>
+                    <button class="search-back-btn"> <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12"
+                            viewBox="0 0 512 512">
+                            <path
+                                d="M459.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29l0-320c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4L288 214.3l0 41.7 0 41.7L459.5 440.6zM256 352l0-96 0-128 0-32c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160C4.2 237.5 0 246.5 0 256s4.2 18.5 11.5 24.6l192 160c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29l0-64z" />
+                        </svg>
+                    </button>
                 </div>
             </div>
 
             <div class="about" id="about">
                 <h2>About Us</h2>
-                <p>FilmBuff is your ultimate destination for in-depth movie exploration. Tailored for true cinema aficionados, our platform offers comprehensive film information, reviews, and insights that go beyond the surface. Whether you're looking to dive deep into your favorite classics or discover hidden gems, FilmBuff has you covered.</p>
-                
+                <p>FilmBuff is your ultimate destination for in-depth movie exploration. Tailored for true cinema
+                    aficionados, our platform offers comprehensive film information, reviews, and insights that go
+                    beyond the surface. Whether you're looking to dive deep into your favorite classics or discover
+                    hidden gems, FilmBuff has you covered.</p>
+
             </div>
     </main>
 
@@ -120,17 +145,6 @@
 
 
     <script src="./app.js"></script>
-    <script>
-        $(window).scroll(function () {
-            if ($(document).scrollTop() > 50) {
-                $('.nav').addClass('affix');
-                console.log("OK");
-            } else {
-                $('.nav').removeClass('affix');
-            }
-        });
-    </script>
-
 </body>
 
 </html>
